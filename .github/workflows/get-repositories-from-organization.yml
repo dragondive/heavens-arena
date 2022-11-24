@@ -15,5 +15,5 @@ jobs:
       - name: List files in the repository
         run: |
           repositories_info=$(curl -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/orgs/adobe/repos)
-          echo "repositories info from curl= \n$repositories_info"
+          echo $repositories_info > $HOME/repositories_info.json
       - run: echo "🍏 This job's status is ${{ job.status }}."
