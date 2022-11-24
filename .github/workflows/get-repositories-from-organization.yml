@@ -1,5 +1,5 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out Github API 🚀
+name: GitHub API get repositories info
+run-name: ${{ github.actor }} learning Github API 🚀
 on: [push]
 jobs:
   get-repositories:
@@ -13,15 +13,22 @@ jobs:
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
+        shell: bash
         run: |
           repositories_info=$(curl -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/orgs/adobe/repos)
-          echo $GITHUB_WORKSPACE
-          cd $GITHUB_WORKSPACE
           echo $repositories_info > $GITHUB_WORKSPACE/repositories_info.json
+          cd $GITHUB_WORKSPACE
           git status
           git add repositories_info.json
           git config --global user.email "${{ github.event.pusher.email }}"
           git config --global user.name "${{ github.event.pusher.name }}"
           git commit -m "checking if commit works with GITHUB_WORKSPACE"
           git push
+          readarray -t repositories_array < <(jq -c '.[]' <<< $repositories_info)
+          for item in "${repositories_array[@]}"; do
+            name=$(jq '.name' <<< "$item")
+            description=$(jq '.description' <<< "$item")
+            homepage=$(jq '.homepage' <<< "$item")
+            echo "name: $name, description: $description, homepage: $homepage"
+          done
       - run: echo "🍏 This job's status is ${{ job.status }}."
