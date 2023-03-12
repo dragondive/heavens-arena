@@ -14,5 +14,6 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
-          curl -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/orgs/adobe/repos
+          repositories_info=$(curl -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/orgs/adobe/repos)
+          echo "repositories info from curl= \n$repositories_info"
       - run: echo "🍏 This job's status is ${{ job.status }}."
