@@ -15,7 +15,10 @@ jobs:
       - name: List files in the repository
         run: |
           repositories_info=$(curl -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/orgs/adobe/repos)
-          echo $HOME
-          ls $HOME
-          echo $repositories_info > $HOME/repositories_info.json
+          echo $GITHUB_WORKSPACE
+          ls $GITHUB_WORKSPACE
+          echo $repositories_info > $GITHUB_WORKSPACE/repositories_info.json
+          git status
+          git add $GITHUB_WORKSPACE/repositories_info.json
+          git commit -m "checking if commit works with GITHUB_WORKSPACE"
       - run: echo "🍏 This job's status is ${{ job.status }}."
