@@ -22,7 +22,7 @@ jobs:
           git add repositories_info.json
           git config --global user.email "${{ github.event.pusher.email }}"
           git config --global user.name "${{ github.event.pusher.name }}"
-          git commit -m "checking if commit works with GITHUB_WORKSPACE"
+          git diff-index --quiet HEAD || git commit -m "checking if commit works with GITHUB_WORKSPACE"
           git push
           readarray -t repositories_array < <(jq -c '.[]' <<< $repositories_info)
           for item in "${repositories_array[@]}"; do
