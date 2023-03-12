@@ -1,5 +1,5 @@
-import message.message_provider
+from message.message_provider import get_real_message
 
 def get_answer():
-    print(message.message_provider.get_real_message())
+    print(get_real_message())
     return 42

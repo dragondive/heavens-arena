@@ -1,7 +1,7 @@
-from answer.deep.answer_provider import get_answer
+import answer.deep.answer_provider
 
 def get_message():
-    return "Hello " + str(get_answer())
+    return "Hello " + str(answer.deep.answer_provider.get_answer())
 
 def get_real_message():
     return "The One Piece is REAL!!!"
