@@ -1,10 +1,9 @@
 import message_provider
+import sys
 
 print(message_provider.get_message())
-print(type(message_provider))
-print(dir(message_provider))
+print(sys.path)
 
-# PS C:\WORK\dragondive\heavens-arena\python\modules> python main.py
+# PS C:\WORK\dragondive\heavens-arena> python .\python\modules\main.py
 # Hello World
-# <class 'module'>
-# ['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'get_message']
+# ['C:\\WORK\\dragondive\\heavens-arena\\python\\modules', 'C:\\WORK\\python', 'C:\\Users\\aravi\\AppData\\Local\\Programs\\Python\\Python311\\python311.zip', 'C:\\Users\\aravi\\AppData\\Local\\Programs\\Python\\Python311\\Lib', 'C:\\Users\\aravi\\AppData\\Local\\Programs\\Python\\Python311\\DLLs', 'C:\\Users\\aravi\\AppData\\Local\\Programs\\Python\\Python311', 'C:\\Users\\aravi\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages']
