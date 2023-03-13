@@ -1,9 +1,14 @@
-import message_provider
-import sys
+import message
 
-print(message_provider.get_message())
-print(sys.path)
+print(type(message))
+print(dir(message))
+print(message.message_provider.get_message())   # error!
 
-# PS C:\WORK\dragondive\heavens-arena> python .\python\modules\main.py
-# Hello World
-# ['C:\\WORK\\dragondive\\heavens-arena\\python\\modules', 'C:\\WORK\\python', 'C:\\Users\\aravi\\AppData\\Local\\Programs\\Python\\Python311\\python311.zip', 'C:\\Users\\aravi\\AppData\\Local\\Programs\\Python\\Python311\\Lib', 'C:\\Users\\aravi\\AppData\\Local\\Programs\\Python\\Python311\\DLLs', 'C:\\Users\\aravi\\AppData\\Local\\Programs\\Python\\Python311', 'C:\\Users\\aravi\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages']
+# PS C:\WORK\dragondive\heavens-arena\python\modules> python main.py
+# <class 'module'>
+# ['__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__']
+# Traceback (most recent call last):
+#   File "C:\WORK\dragondive\heavens-arena\python\modules\main.py", line 5, in <module>
+#     print(message.message_provider.get_message())
+#           ^^^^^^^^^^^^^^^^^^^^^^^^
+# AttributeError: module 'message' has no attribute 'message_provider'
