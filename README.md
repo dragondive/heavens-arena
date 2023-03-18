@@ -1,6 +1,6 @@
-# conan_learning
+# conan learning
 
-This repository contains example source codes and notes I wrote while learning the [Conan package manager for C/C++](https://conan.io/).
+This branch contains example source codes and notes I wrote while learning the [Conan package manager for C/C++](https://conan.io/).
 
 * [Getting started with Conan package manager](blog/getting-started-with-conan.md)
 * [Setting up Google Test with Conan package manager](blog/setup-gtest-with-conan.md)
