@@ -9,4 +9,4 @@ This branch contains example source codes and notes I wrote while learning the [
 * [Working with non-Conan packages](blog/create-and-test-conan-package.md)
 * [Profiles, `build_requires` and cross-building](blog/profiles-build-requires-cross-building.md)
 
-![conan learning usecases](http://www.plantuml.com/plantuml/svg/5Sqx3i8m303GdLF00OXtfYBHaOKR6CTg8gLsvK-uFZ2zyIqUQ97xE5swqCZAQUFS8Ww_0HX-ojQZvJkTZLI29Ghf3jLmKwbzCZJ6oU9ND1O4Ka41rpHYXzTwVppNSlo3XQN-_080)
+![conan learning usecases](http://www.plantuml.com/plantuml/dsvg/5Sqx3i8m303GdLF00OXtfYBHaOKR6CTg8gLsvK-uFZ2zyIqUQ97xE5swqCZAQUFS8Ww_0HX-ojQZvJkTZLI29Ghf3jLmKwbzCZJ6oU9ND1O4Ka41rpHYXzTwVppNSlo3XQN-_080)
