@@ -9,6 +9,7 @@ This repository contains example source codes and notes I wrote while learning t
 * [Working with non-Conan packages](blog/create-and-test-conan-package.md)
 * [Profiles, `build_requires` and cross-building](blog/profiles-build-requires-cross-building.md)
 
+```plantuml
 @startuml
     title conan learning usecases
 
@@ -44,4 +45,10 @@ This repository contains example source codes and notes I wrote while learning t
     Dev3 --> Adapt
 
     Dev4 --> Crossbuild
+
+' hidden connector gymnastics for proper layout of components
+    Test -[hidden]-> Dev2
+    Include -[hidden]-> Dev3
+    Adapt -[hidden]-> Dev4
 @enduml
+```
