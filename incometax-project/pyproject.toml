@@ -7,6 +7,7 @@ name ="incometax"
 version = "0.0.1"
 dependencies = [
     "pytest",
+    "prospector[with_everything]",
 ]
 
 [tool.setuptools.packages.find]
