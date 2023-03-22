@@ -1,0 +1,7 @@
+__pycache__
+*.egg-info
+*.orig
+
+# heavens-arena follows the below naming convention for python venv's
+# If this conflicts with any legitimate file/dir name in future, change the convention.
+venv_*
