@@ -1,0 +1,42 @@
+name: Build and Test incometax-project
+on:
+  push:
+    branches: ['incometax']
+  workflow_dispatch: {}
+
+jobs:
+  setup:
+    name: Setup python environment
+    runs-on: ubuntu-latest
+    steps:
+    - name: install python
+      uses: actions/setup-python@v4
+      with:
+        python-version: |
+            3.8
+            3.9
+            3.10
+  build-and-test:
+    name: Build and test incometax package
+    needs: [setup]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout incometax branch
+        uses: actions/checkout@v3
+        with:
+          ref: 'incometax'
+      - name: install pytest
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+      - name: Install incometax package
+        shell: bash
+        run: |
+          cd incometax-project
+          pip install .
+      - name: Run pytest
+        shell: bash
+        run: |
+          cd incometax-project  # change the rootdir so pytest uses the pyproject.toml
+          pytest
