@@ -5,3 +5,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name ="incometax"
 version = "0.0.1"
+
+[tool.setuptools.packages.find]
+where = [
+    "incometax/src"
+]
