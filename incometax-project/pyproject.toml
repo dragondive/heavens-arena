@@ -8,6 +8,8 @@ version = "0.0.1"
 dependencies = [
     "pytest",
     "prospector[with_everything]",
+    "black",
+    "pandas",
 ]
 
 [tool.setuptools.packages.find]
