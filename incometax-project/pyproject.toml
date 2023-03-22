@@ -5,8 +5,16 @@ build-backend = "setuptools.build_meta"
 [project]
 name ="incometax"
 version = "0.0.1"
+dependencies = [
+    "pytest",
+]
 
 [tool.setuptools.packages.find]
 where = [
+    "incometax/src"
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
     "incometax/src"
 ]
