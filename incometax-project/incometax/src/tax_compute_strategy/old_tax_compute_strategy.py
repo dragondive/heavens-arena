@@ -1,6 +1,9 @@
+import logging
 import math
+
 import pandas
 
+logger = logging.getLogger(__name__)
 
 class OldTaxComputeStrategy:
     def __init__(self) -> None:
@@ -13,6 +16,7 @@ class OldTaxComputeStrategy:
             ],
             columns=["Lower_Limit", "Upper_Limit", "Percent", "Maximum_Tax"],
         )
+        logger.info(f"{self.tax_brackets}")
 
     def compute(self, income):
         income = math.floor(
