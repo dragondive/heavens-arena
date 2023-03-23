@@ -23,5 +23,6 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
+logger.config.fileConfig('logging.conf')
 tax_compute_strategy = OldTaxComputeStrategy()
 logger.info(tax_compute_strategy.compute(args.income_from_salary))

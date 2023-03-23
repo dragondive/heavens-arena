@@ -1,9 +1,8 @@
-import logging
 import math
 
 import pandas
 
-logger = logging.getLogger(__name__)
+from utils import logger
 
 class OldTaxComputeStrategy:
     def __init__(self) -> None:
