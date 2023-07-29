@@ -8,7 +8,6 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "contract-consumer"
-version = "0.0.0"
 authors = [
     { name = "Aravind Pai", email = "dragondive@outlook.in" },
 ]
@@ -23,9 +22,9 @@ dependencies = [
     "prospector[with_everything]",
     "python-semantic-release",
 ]
-# dynamic = [
-#     "version",
-# ]
+dynamic = [
+    "version",
+]
 
 
 [tool.pytest]
@@ -33,10 +32,11 @@ mock_use_standalone_module = true
 
 
 [tool.semantic_release]
+version = "0.0.0"
 version_toml = [
-    "pyproject.toml:project.version"
+    "pyproject.toml:tool.semantic_release.version"
 ]
 branches.main.match = "main"
 
-# [tool.semantic_release.remote]
-# token = { env = "GH_TOKEN" }
+[tool.semantic_release.remote]
+token = { env = "GH_TOKEN" }
