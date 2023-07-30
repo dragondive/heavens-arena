@@ -1,4 +1,4 @@
-"""Unit tests for various tax compute strategys."""
+"""Hello World unit tests."""
 import pytest
 
 from helloworld.helloworld import HelloWorld
