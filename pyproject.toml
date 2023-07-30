@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "contract-consumer"
+name = "contract_consumer"
 authors = [
     { name = "Aravind Pai", email = "dragondive@outlook.in" },
 ]
@@ -29,14 +29,24 @@ dynamic = [
 
 [tool.pytest]
 mock_use_standalone_module = true
+ini_options.pythonpath = [
+    "src/contract_consumer",
+]
 
 
 [tool.semantic_release]
 version = "0.1.0"
 version_toml = [
-    "pyproject.toml:tool.semantic_release.version"
+    "pyproject.toml:tool.semantic_release.version",
 ]
 branches.main.match = "main"
 
+
 [tool.semantic_release.remote]
 token = { env = "GH_TOKEN" }
+
+
+[tool.portray]
+modules = [
+    "contract_consumer",
+]
