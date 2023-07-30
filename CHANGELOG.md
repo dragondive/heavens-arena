@@ -2,6 +2,27 @@
 
 
 
+## v0.2.0 (2023-07-30)
+
+### Build
+
+* build: add prospector.yaml config file ([`7ba7759`](https://github.com/kukuroo-mountain/contract-consumer/commit/7ba77592a645c139cc3866ccc3acab58101e968f))
+
+* build: added vscode settings file for convenience ([`e114f2d`](https://github.com/kukuroo-mountain/contract-consumer/commit/e114f2db1bf44c56df98eb663263c767cdd4f545))
+
+### Chore
+
+* chore: fix EOL from CRLF to LF in pyproject.toml ([`6da6bcb`](https://github.com/kukuroo-mountain/contract-consumer/commit/6da6bcb2bf825455efb3cc367885abeadf4508d6))
+
+### Feature
+
+* feat: setup portray documentation generator ([`3f6ad27`](https://github.com/kukuroo-mountain/contract-consumer/commit/3f6ad2784f75285f19481492b838eeb86d71dd2a))
+
+### Style
+
+* style: reformatted helloworld.py with black ([`02dd4a7`](https://github.com/kukuroo-mountain/contract-consumer/commit/02dd4a7b352103059ef221e27445702989111fd1))
+
+
 ## v0.1.0 (2023-07-29)
 
 ### Build
