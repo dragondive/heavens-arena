@@ -2,6 +2,17 @@
 
 
 
+## v0.3.0 (2023-07-30)
+
+### Documentation
+
+* docs: fixed copy-paste mistake in docstring ([`50b8acc`](https://github.com/kukuroo-mountain/contract-consumer/commit/50b8acc11a9b3e3899c9f1638cde645910d6cac9))
+
+### Feature
+
+* feat: add consumer module ([`c952595`](https://github.com/kukuroo-mountain/contract-consumer/commit/c9525956086deb031765e573ffc1beb075c638e6))
+
+
 ## v0.2.0 (2023-07-30)
 
 ### Build
