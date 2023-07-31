@@ -1,0 +1,11 @@
+name: Build the main branch
+on:
+  push:
+    branches:
+      - main
+jobs:
+  hello-world:
+    name: "Hello World"
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World"
