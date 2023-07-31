@@ -3,6 +3,7 @@ import pytest
 from pact import Consumer as PactConsumer, Provider, Like
 
 from consumer.consumer import Consumer
+from project import Project
 
 PACK_MOCK_HOST = "localhost"
 PACK_MOCK_PORT = 1234
@@ -15,7 +16,11 @@ def consumer():
 
 @pytest.fixture
 def pact_maker():
-    pact_maker = PactConsumer("contract_consumer").has_pact_with(
+    pact_maker = PactConsumer(
+        name="contract_consumer",
+        version=Project.get_version(),
+        tags=[Project.get_version()],
+    ).has_pact_with(
         Provider("contract_provider"),
         host_name=PACK_MOCK_HOST,
         port=PACK_MOCK_PORT,
