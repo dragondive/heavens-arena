@@ -6,4 +6,38 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello World"
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+      - name: Create a virtual environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m venv env
+          source env/bin/activate
+      - name: Install the package dependencies
+        run: python -m pip install .
+      - name: Publish the next semantic-release
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN_FOR_SEMANTIC_RELEASE }}
+        run: |
+          echo "CONSUMER_APP_VERSION=$(semantic-release version --print)" >> $GITHUB_ENV
+          semantic-release version && semantic-release publish
+      - name: Run the tests to generate the contract file
+        run: pytest
+      - name: Download the pact CLI
+        run: |
+          curl -LO https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v2.0.3/pact-2.0.3-linux-x86_64.tar.gz
+          tar xzf pact-2.0.3-linux-x86_64.tar.gz
+      - name: Publish the contract to pact broker
+        env:
+          PACT_BROKER_BASE_URL: "https://dragondive.pactflow.io"
+          PACT_BROKER_TOKEN: ${{ secrets.PACT_BROKER_TOKEN }}
+        run: |
+          ./pact/bin/pact-broker publish contract_consumer-contract_provider.json --consumer-app-version $CONSUMER_APP_VERSION --broker-base-url $PACT_BROKER_BASE_URL --broker-token $PACT_BROKER_TOKEN
