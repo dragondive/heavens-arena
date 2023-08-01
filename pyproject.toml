@@ -7,11 +7,11 @@ build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "contract_consumer"
+name = "contract_testing"
 authors = [
     { name = "Aravind Pai", email = "dragondive@outlook.in" },
 ]
-description = "Consumer for the Contract Testing Preparation and Demo"
+description = "Contract Testing Preparation and Demo"
 dependencies = [
     "pytest",
     "requests",
@@ -32,6 +32,7 @@ dynamic = [
 mock_use_standalone_module = true
 ini_options.pythonpath = [
     "src/contract_consumer",
+    "src/contract_provider",
 ]
 
 
@@ -50,4 +51,5 @@ token = { env = "GH_TOKEN" }
 [tool.portray]
 modules = [
     "contract_consumer",
+    "contract_provider",
 ]

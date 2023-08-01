@@ -8,7 +8,8 @@
     "python.linting.enabled": true,
     "python.analysis.typeCheckingMode": "basic",
     "python.analysis.extraPaths": [
-        "./src/contract_consumer"
+        "./src/contract_consumer",
+        "./src/contract_provider"
     ],
     "files.eol": "\n"
 }
