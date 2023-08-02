@@ -55,6 +55,7 @@ def test_contract_get_user_info_with_valid_userid_returns_valid_user_info(
     expected = {
         "name": Like("Aravind Pai"),
         "email": Like("dragondive@outlook.in"),
+        "userid": Like("dragondive"),
     }
 
     (
@@ -69,3 +70,4 @@ def test_contract_get_user_info_with_valid_userid_returns_valid_user_info(
         assert user_info is not None
         assert isinstance(user_info.name, str)
         assert isinstance(user_info.email, str)
+        assert isinstance(user_info.userid, str)

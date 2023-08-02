@@ -34,7 +34,7 @@ class Consumer:
             return None
 
         json = response.json()
-        return UserInfo(json["name"], json["email"])
+        return UserInfo(json["name"], json["email"], json["userid"])
 
 
 class UserInfo:
@@ -50,6 +50,7 @@ class UserInfo:
 
     """
 
-    def __init__(self, name: str, email: str):
+    def __init__(self, name: str, email: str, userid: str):
         self.name = name
         self.email = email
+        self.userid = userid
