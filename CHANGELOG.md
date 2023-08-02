@@ -2,6 +2,21 @@
 
 
 
+## v0.5.0 (2023-08-02)
+
+### Build
+
+* build: disable portray for now, reenable it later ([`c4ae0de`](https://github.com/kukuroo-mountain/contract-consumer/commit/c4ae0decfbb6cf3185c5c70c8a1475c6faff90ef))
+
+### Feature
+
+* feat: dummy for demo ([`2246632`](https://github.com/kukuroo-mountain/contract-consumer/commit/22466327adbf98156ebae0fa36348db877b5592c))
+
+### Test
+
+* test: skip tests for demo ([`c3c4eea`](https://github.com/kukuroo-mountain/contract-consumer/commit/c3c4eeabb1ea8cbf13da264917cab5bb40105db6))
+
+
 ## v0.4.0 (2023-08-01)
 
 ### Ci

@@ -37,7 +37,7 @@ ini_options.pythonpath = [
 
 
 [tool.semantic_release]
-version = "0.4.0"
+version = "0.5.0"
 version_toml = [
     "pyproject.toml:tool.semantic_release.version",
 ]
