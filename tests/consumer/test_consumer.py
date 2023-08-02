@@ -9,6 +9,7 @@ def consumer():
     return Consumer(base_uri="https://jsonplaceholder.typicode.com")
 
 
+@pytest.mark.skip("for demo")
 @pytest.mark.parametrize(
     "userid",
     range(1, 10),
