@@ -2,6 +2,17 @@
 
 
 
+## v0.6.0 (2023-08-02)
+
+### Feature
+
+* feat: break contract for demo ([`341c881`](https://github.com/kukuroo-mountain/contract-consumer/commit/341c881d4a55b8f1d4902595e631a4a6f94473b7))
+
+### Unknown
+
+* Merge branch &#39;main&#39; of https://github.com/kukuroo-mountain/contract-consumer ([`9affd70`](https://github.com/kukuroo-mountain/contract-consumer/commit/9affd70390b66d9d7f300f81a37514cb1041109e))
+
+
 ## v0.5.0 (2023-08-02)
 
 ### Build
